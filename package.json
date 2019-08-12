@@ -4,7 +4,7 @@
   "description": "Todo-app is an exercise application where you can add, remove, change and delete tasks.",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack-dev-ser --progress --colors --inline --hot", 
+    "dev": "webpack-dev-server --progress --colors --inline --hot", 
     "production":"webpack --progress -p"
   },
   "repository": {
