@@ -11,6 +11,5 @@ export default props => (
             <h4>This is who we are.</h4>
         <h1>How to make contact?</h1>
             <h4>Social medias.</h4>
-
     </div>
 )
