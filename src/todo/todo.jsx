@@ -1,9 +1,8 @@
 import React from 'react'
-import Menu from '../template/menu'
-
+import PageHeader from '../template/pageHeader'
 
 export default props => (
     <div>
-        <h1>todo</h1>
+        <PageHeader name='Tasks' small=' register'/>
     </div>
 )
