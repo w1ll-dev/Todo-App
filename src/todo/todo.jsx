@@ -4,6 +4,6 @@ import Menu from '../template/menu'
 
 export default props => (
     <div>
-        <Menu/>
+        <h1>todo</h1>
     </div>
 )
