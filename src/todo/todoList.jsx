@@ -16,11 +16,13 @@ export default props => {
                             style='success'
                             icon='check'
                             onClick={() => props.handleMakedAsDone(todo)}
+                            hide={todo.done}
                         />
                         <IconButton
                             style='warning'
                             icon='undo'
                             onClick={() => props.handleMakedAsPending(todo)}
+                            hide={!todo.done}
                         />
                         <IconButton
                             style='danger'
