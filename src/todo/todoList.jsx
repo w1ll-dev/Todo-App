@@ -2,17 +2,35 @@ import React from 'react'
 import IconButton from '../template/iconButton'
 
 export default props => {
+
     const list = props.list || []
     
     const renderRows = () => {
         return list.map(todo => (
                 <tr key={todo._id}>
-                    <td>{todo.description}</td>
+                    <td className={todo.done ? 'markedAsDone' : 'markedAsPending'}>
+                        {todo.description}
+                    </td>
                     <td>
-                        <IconButton style='danger' icon='trash-o' onClick={() => props.handleRemove(todo)}/>
+                        <IconButton
+                            style='success'
+                            icon='check'
+                            onClick={() => props.handleMakedAsDone(todo)}
+                        />
+                        <IconButton
+                            style='warning'
+                            icon='undo'
+                            onClick={() => props.handleMakedAsPending(todo)}
+                        />
+                        <IconButton
+                            style='danger'
+                            icon='trash-o'
+                            onClick={() => props.handleRemove(todo)}
+                        />
                     </td>
                 </tr> 
-            ))
+            )
+        )
     }
     return (
         <table className="table">
