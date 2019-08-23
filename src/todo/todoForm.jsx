@@ -26,6 +26,7 @@ export default props => {
                value = {props.description} 
                onChange = {props.handleChange}
                onKeyUp={keyHandler}
+               autoFocus
                />
            </Grid>
    
