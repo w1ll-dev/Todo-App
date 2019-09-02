@@ -2,8 +2,13 @@ import React from 'react'
 import Grid from '../template/grid'
 import IconButton from '../template/iconButton'
 
+//REACT AND REACT-REDUX
+import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
+import { changeDescription } from './changeDescription'
 
-export default props => {
+
+const TodoForm = props => {
    const keyHandler = (e) => {
       switch (e.key){
          case 'Enter':
@@ -24,7 +29,7 @@ export default props => {
                className='form-control' 
                placeholder='Add new task' 
                value = {props.description} 
-               onChange = {props.handleChange}
+               onChange = {props.changeDescription}
                onKeyUp={keyHandler}
                autoFocus
                />
@@ -50,3 +55,8 @@ export default props => {
       </div>
    )
 }
+
+const mapStateToProps = state => ({ description: state.todo.description })
+const mapDispatchToProps = dispatch => bindActionCreators({ changeDescription }, dispatch)
+
+export default connect(mapStateToProps, mapDispatchToProps)(TodoForm)
